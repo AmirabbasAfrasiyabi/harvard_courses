@@ -31,7 +31,7 @@
 # with open("file.txt" ) as file:
 #     for line in file:
 #         names.append(line.strip())
-# for name in names:
+# for name in sorted(names , reverse=True):
 #     print(f"hello {name}")
 
 
@@ -39,46 +39,38 @@
 # student = []
 # with open("file.csv") as file:
 #     for line in file:
-#         name , house = line.strip().split(',')
-#         student.append(f"{name} is in {house}")
+#         name , house , years = line.strip().split(',')
+#         student.append(f"{name} is in {house} , and {years}")
 #
 # for _ in sorted(student):
 #     print(_)
 
+
 """example 7"""
-# student = []
-#
-# with open('file.csv', newline='') as file:
-#     for line in file:
-#         name , house = line.rstrip().split(',')
-#         student.append({'name': name, 'house': house})
-# for student in sorted(student , key=lambda student: student['name']):
-#     print(f"{student['name']} is in {student['house']}")
-
-
-"""example 8 -> solve problem too many value to unpack"""
 # import csv
 # student = []
-#
-# with open('file.csv') as file:
-#     reader = csv.reader(file)
-#     for line in file:
-#         student.append({'name': line[0], 'house': line[1]})
+# with open('file.csv', newline='') as file:
+#     reader = csv.reader(file, delimiter='\t')
+#     for row in reader:
+#         if len(row) != 3:
+#             continue
+#         student.append({'name': name, 'house': home , 'years': age})
 # for student in sorted(student , key=lambda student: student['name']):
-#     print(f"{student['name']} is in {student['house']}")
-#
+#     print(f"{student['name']} is {student['years']} years old.")
+
 
 
 """" write a csv file using csv.writer """
 
-import csv
-name = input("Enter your name: ")
-Grade = input("Enter your grade: ")
-home = input("Enter your home: ")
-
-with open("file.csv" , "a") as file:
-    writer = csv.writer(file)
-    writer.writerow([name, Grade,home])
+# import csv
+# name = input("Enter your name: ")
+# home = input("Enter your home: ")
+# grade = input("Enter your home: ")
+#
+# with open("file.csv" , "a") as file:
+#     writer = csv.writer(file)
+#     writer.writerow([name, home,grade])
+#
 
 
 
