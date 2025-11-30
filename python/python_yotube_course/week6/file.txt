@@ -1,7 +1,4 @@
-Amir
-Abbas
-Reyhane
-Atiye
+amir
+abbas
+atiye
 
-
-hamide
